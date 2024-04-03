@@ -174,7 +174,7 @@ class Model
       }
       $i += 1;
     }
-    $ops .= 'updated_at = ' .  date('Y-m-d H:i')  . '';
+    $ops .= 'updated_at = "' .  date('Y-m-d H:i')  . '"';
 
     // echo ("UPDATE $this->table_name set $ops where id = $id");
     return $this->execute("UPDATE $this->table_name set $ops where id = '$id'");
@@ -192,7 +192,7 @@ class Model
         $ops .= '' . $index . ' = "' . $value  . '", ';
       }
     }
-    $ops .= 'updated_at = ' .  date('Y-m-d H:i')  . '';
+    $ops .= 'updated_at = "' .  date('Y-m-d H:i')  . '"';
     return $this->execute("UPDATE $this->table_name set $ops where id = '$this->id'");
   }
 
