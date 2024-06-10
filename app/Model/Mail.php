@@ -28,14 +28,14 @@ class Mail extends Model
         try {
             $to = $this->recever;
             $subject = "Contact From Website";
-            $cc = "binmulindi.abraham@gmail.com";
+            $cc = "you@gmail.com";
             $message = "
                 <p>Name : " . $this->sender_name . "</p> " .
                 "<p> Telephone : " . $this->sender_telephone . "</p>" .
                 "<p> Mail : " . $this->sender . "</p>" .
                 "<p> Message : " . $this->message . "</p>";
 
-            $headers = "From:MudeCapital <" . $this->sender . ">\r\n" .
+            $headers = "From:PHPRESTAPI <" . $this->sender . ">\r\n" .
                 "CC:" . $cc . "" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
@@ -57,14 +57,14 @@ class Mail extends Model
         try {
             $to = $this->recever;
             $subject = "Contact From Website";
-            $cc = "binmulindi.abraham@gmail.com";
+            $cc = "you@gmail.com";
             $message = "
                 <p>Name : " . $this->sender_name . "</p> " .
                 "<p> Telephone : " . $this->sender_telephone . "</p>" .
                 "<p> Mail : " . $this->sender . "</p>" .
                 "<p> Message : " . $this->message . "</p>";
 
-            $headers = "From:easyChik <" . $this->sender . ">\r\n" .
+            $headers = "From:PHPRESTAPI <" . $this->sender . ">\r\n" .
                 "CC:" . $cc . "" . "\r\n";
             $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
@@ -92,7 +92,7 @@ class Mail extends Model
             "<p>  </p>" .
             "<h3> l'équipe d'<b>easyChik.</b> </h3>";
 
-        $headers = "From:easyChik <contact@easychik.com>\r\n";
+        $headers = "From:PHPRESTAPI <contact@company.com>\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 
         if (mail($to, $subject, $message, $headers)) {

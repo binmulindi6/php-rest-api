@@ -18,18 +18,11 @@ class User extends Model
     public $avatar;
     public $remember_token;
     public $email_verification_code;
-    public $purchases;
-    public $sellings;
-    public $swaps;
-
 
     public function getInfo()
     {
         if (!is_null($this)) {
 
-            $this->purchases = $this->purchases();
-            $this->sellings = $this->sellings();
-            $this->swaps = $this->swaps();
             return $this;
         } else {
             return null;
@@ -37,24 +30,10 @@ class User extends Model
     }
 
     ///crypto
-    public function purchases()
-    {
-        $instance = new Purchase();
-        return $instance->getByOptions(['user_id' => $this->id]);
-    }
-    public function sellings()
-    {
-        $instance = new Selling();
-        return $instance->getByOptions(['user_id' => $this->id]);
-    }
-    public function swaps()
-    {
-        $instance = new Swap();
-        return $instance->getByOptions(['user_id' => $this->id]);
-    }
+
     public function notifications()
     {
-        $notificationInstance = new Notificatoin();
+        $notificationInstance = new Notification();
         return $notificationInstance->getByOptions(['user_id' => $this->id]);
     }
     public function getLastToken()

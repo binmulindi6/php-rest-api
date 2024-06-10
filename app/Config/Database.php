@@ -8,10 +8,11 @@ use PDOException;
 
 class Database
 {
+
   private $servername = "localhost:8889";
   private $username = "root";
   private $password = "root";
-  private $db = "mude_capital";
+  private $db = "php_rest_api";
   private $conn;
 
   function __construct()
